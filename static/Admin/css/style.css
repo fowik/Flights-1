@@ -803,8 +803,9 @@ a:hover {
 }
 .app-search input {
     border-bottom: 0px !important;
+    border: 0px;
     /* line-height: 7px !important; */
-    height: 35px !important;
+    height: 34px !important;
     color: #666;
     font-weight: 400;
 }
@@ -1105,3 +1106,73 @@ a:hover {
 .ad-hom-col-2 i{}
 .ad-hom-col-3 i{}
 .ad-hom-col-4 i{}
+
+.form-box {
+    position: fixed;
+    left: 38.54%;
+    right: 38.54%;
+    top: 24.54%;
+    bottom: 24.54%;
+    width: 440px;
+    height: 550px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.button-box {
+    top: 80px;
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+    user-select: none;
+}
+
+.toggle-btn {
+    width: 98px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    left: 0;
+    position: absolute;
+    width: 98px;
+    height: 100%;
+    background: #f1c933;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.check-box {
+    margin: 30px 10px 30px 0;
+    width: 25px;
+    height: 25px;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    padding-bottom: 10px;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn {
+    width: 80%;
+    height: 40px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #f1c933;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    user-select: none;
+}

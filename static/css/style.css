@@ -26,11 +26,11 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 180px;
+    width: 206px;
     color: #111236;
     left: 29px;
     top: 65px;
-    height: 36px;
+    height: 50px;
     position: absolute;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
@@ -189,11 +189,11 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 180px;
+    width: 200px;
     color: #111236;
-    left: 280px;
+    left: 285px;
     top: 65px;
-    height: 36px;
+    height: 50px;
     position: absolute;
 }
 .datepick {
@@ -201,9 +201,9 @@ body {
     padding: .375rem .75rem;
     border: .0625rem solid #b2b2bf;
     background: #fff;
-    width: 160px;
+    width: 161px;
     color: #111236;
-    left: 485px;
+    left: 484px;
     top: 65px;
     height: 50px;
     position: absolute;
@@ -309,10 +309,10 @@ body {
     left: 30px
 }
 .label1 {
-    margin-right: 205px;
+    margin-right: 210px;
 }
 .label2 {
-    margin-right: 173px;
+    margin-right: 167px;
 }
 .label3 {
     margin-right: 130px;
@@ -462,4 +462,44 @@ background-color: #FFFAF0;
     border: none; 
     outline: none;
     background: none;
+}
+
+.input1 {
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 30px;
+    border-color: darkgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.input1 ::placeholder {
+  color: #f1f2f8;
+}
+
+.nokuriene1 {
+    display: inline-block;
+    border: .0625rem solid #b2b2bf;
+    background: #fff;
+    width: 206px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+.dobavit {
+    border-radius: 2px;
+    border: none;
+    height: 19.24px;
+    background-color: #3CB371
+}
+
+.udalit {
+  border-radius: 2px;
+  border: none;
+  height: 19.24px;
+  background-color: #d1435b
 }

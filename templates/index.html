@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/popUp.css') }}">
     <link rel="shortcut icon" href="https://img.icons8.com/color/2x/american-airlines.png">
 
     <title>Ceļot prieks</title>
@@ -19,14 +20,44 @@
                     <image id="image0" width="210" height="46" xlink:href="data:image/png;base64,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"/></defs>
                 </svg>        
             </a>
+            <script>function swap(){
+  [document.getElementById("nokuriene").value, document.getElementById("wheretogo").value] = [document.getElementById("wheretogo").value, document.getElementById("nokuriene").value];
+}</script>
             <a class="faq" href="#">Справка</a>
-            <button onclick='location.href="login.html"' ftype="button" class="login" ><a class="btn">Вход в личный кабинет</a></button>
+            <button id="vhod" class="login btn" onclick="est()">Вход в личный кабинет</button>
+            <a id="adminka" class="admin" href="/login.html">Admin</a>
             <a class="aviasquare" href="/">
         </div>
             <svg width="12" height="12" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.265704 3.12166C0.359188 3.07631 0.465441 3.06454 0.566584 3.08834C0.667727 3.11213 0.757585 3.17005 0.821037 3.25233L1.6797 4.36649L2.73904 4.21074C2.84209 4.19099 2.94678 4.18103 3.0517 4.18099H8.80454C9.30136 4.18089 9.79029 4.30522 10.2267 4.54266C10.3135 4.59313 10.3849 4.66636 10.433 4.75445C10.4812 4.84254 10.5044 4.94212 10.5001 5.04244C10.4958 5.14275 10.4641 5.23997 10.4085 5.32358C10.3529 5.4072 10.2755 5.47402 10.1847 5.51683L10.1579 5.52908C9.75816 5.71977 9.32091 5.81882 8.87804 5.81899H6.36154L4.22479 9.24141C4.14384 9.37146 4.03109 9.47874 3.89719 9.55314C3.76329 9.62755 3.61264 9.66661 3.45945 9.66666H2.78862L3.95937 6.2495V5.81899H3.06687C2.9514 5.81884 2.83626 5.80672 2.72329 5.78283L1.6937 5.61483L0.813454 6.75699C0.751732 6.8375 0.664731 6.8949 0.566439 6.91998C0.468148 6.94505 0.364279 6.93634 0.271537 6.89524C0.165887 6.84806 0.0819827 6.76268 0.0366519 6.65622C-0.00867896 6.54977 -0.0120837 6.43011 0.0271205 6.32124L0.50312 4.99999L0.0352871 3.68691C-0.00268791 3.58077 -0.000177572 3.46435 0.0423374 3.35995C0.0848523 3.25555 0.164384 3.17049 0.265704 3.12108V3.12166ZM3.45887 0.333328C3.61207 0.333322 3.76273 0.372366 3.89665 0.446772C4.03056 0.521179 4.14329 0.628493 4.2242 0.758578L6.08504 3.66649H3.9372L2.78745 0.333328H3.45887Z" fill="white"/>
             </svg>        
             <span class="aviabutton">Авиабилеты</span>
         </a>
+    </div>
+<div id="popUp" style="display: none">
+      <div class="form-box">
+        <div class="miniAugsa">
+          <img onclick="net()" id="iziet" src="/static/images/crest.png" class="exitcrest" alt="iziet">
+          <h2 id="miniVirsraksts">LOGIN</h2>
+        </div>
+        <div class="button-box">
+          <div id="btnn" style="left: 100px;"></div>
+          <button type="button" class="toggle-btn" onclick="loge()">Log In</button>
+          <button type="button" class="toggle-btn" onclick="rege()">Register</button>
+        </div>
+        <form id="loge" class="input-group" style="left: -400px;">
+          <input type="email" class="input-field" placeholder="E-pasts" required="">
+          <input type="password" class="input-field" placeholder="Parole" required="">
+          <input type="checkbox" class="check-box"><span class="forgot">Remember Password</span>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <form id="rege" class="input-group" style="left: 50px;">
+          <input type="email" class="input-field" placeholder="E-pasts" id="userInputUN" required="">
+          <input type="password" class="input-field" placeholder="Parole" id="userInputPass" required="">
+          <input type="checkbox" class="check-box" required="">
+          <div class="piekritNoteikumiem">Reģistrējoties Jūs piekrītat konfidencialitātes politikai un lietošanas noteikumiem</div>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
     </div>
     <div class="foto" style="background-image:url(https://content.skyscnr.com/m/785bdfcbe683606c/Large-Flights-hero-2.jpg?crop=1800px:1375px&amp;quality=60)">
         <h1 class="nadpis1">Путешествия начинаются</h1>
@@ -39,29 +70,39 @@
             <label class="label4">Обратно</label>
             <label class="label5">Кол.-во пассажиров</label>
         </div>
-        <input type="text" name="valueAlpha" id="elastic" class="nokuriene" placeholder="Страна, город или аэропорт">
-        <ul class="elastic" id ="myMenu">
-            <li><a onclick="insert('Латвия(LV)')" href="#">Латвия(LV)</a></li>
-            <li><a onclick="insert('Испания(S)')" href="#">Испания(S)</a></li>
-            <li><a onclick="insert('США(US)')" href="#">США(US)</a></li>
-            <li><a onclick="insert('Нидерланды(NL)')" href="#">Нидерланды(NL)</a></li>
-            <li><a onclick="insert('Норвегия(NO)')" href="#">Норвегия(NO)</a></li>
-            <li><a onclick="insert('Румыния(RO)')" href="#">Румыния(RO)</a></li>
-            <li><a onclick="insert('Россия(RU)')" href="#">Россия(RU)</a></li>
-        </ul>
-        <button aria-label="Поменять местами пункты отправления и назначения" id="switch"class="switchbutton" type="button">
+        <form action="/" method="POST" id="form">
+        <select class="nokuriene" name="nokuriene" id="nokuriene" placeholder="Страна, город или аэропорт" method="POST">
+          
+            <option value="Lidosta Hītrova">Lidosta Hītrova</option>
+          
+            <option value="Lidosta Barselona">Lidosta Barselona</option>
+          
+            <option value="Lidosta Frankfurta">Lidosta Frankfurta</option>
+          
+            <option value="asd">asd</option>
+          
+            <option value="asdasd">asdasd</option>
+          
+        </select>
+        
+        <button aria-label="Поменять местами пункты отправления и назначения" id="switch"class="switchbutton" type="button" onClick="swap()">
             <svg style="fill: #0770e3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" style="width:1.125rem;height:1.125rem"><path d="M9.1 11.2V9.5H15c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5H9.1V4.8c0-.6-.6-.9-1.1-.7L2.4 7.3c-.5.3-.5 1 0 1.3L8 11.9c.5.3 1.1-.1 1.1-.7zm12.5 4.1L16 12.1c-.5-.3-1.1.1-1.1.7v1.7H9c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5h5.9v1.7c0 .6.6.9 1.1.7l5.6-3.2c.5-.3.5-1.1 0-1.4z"></path></svg>
         </button>
-        <input type="text" name="valueBeta" id="wheretogo" class="wheretogo" placeholder="Страна, город или аэропорт">
-        <ul class="elastic2" id="myMenu2">
-            <li><a onclick="insert2('Латвия(LV)')" href="#">Латвия(LV)</a></li>
-            <li><a onclick="insert2('Испания(S)')" href="#">Испания(S)</a></li>
-            <li><a onclick="insert2('США(US)')" href="#">США(US)</a></li>
-            <li><a onclick="insert2('Нидерланды(NL)')" href="#">Нидерланды(NL)</a></li>
-            <li><a onclick="insert2('Норвегия(NO)')" href="#">Норвегия(NO)</a></li>
-            <li><a onclick="insert2('Румыния(RO)')" href="#">Румыния(RO)</a></li>
-            <li><a onclick="insert2('Россия(RU)')" href="#">Россия(RU)</a></li>
-        </ul>
+        <select class="wheretogo" name="wheretogo" id="wheretogo" method="POST">
+          
+            <option value="Lidosta Hītrova">Lidosta Hītrova</option>
+          
+            <option value="Lidosta Barselona">Lidosta Barselona</option>
+          
+            <option value="Lidosta Frankfurta">Lidosta Frankfurta</option>
+          
+            <option value="asd">asd</option>
+          
+            <option value="asdasd">asdasd</option>
+          
+        </select>
+        
+      </form>
         <button id="datepicker" class="datepick" type="button" title="Дата вылета">
             <span class="date"><input type="date" id="start" name="trip-start" value="2022-04-01" min="2022-04-01" max="2023-04-30"></span>
         </button>
@@ -72,7 +113,7 @@
             <span class="classselecttext"></span>
         </button>
         <a id="">
-            <button type="submit" id="findbutton" aria-label="Найти билеты" class="findbilet" onclick="sendToPage()">
+            <button type="submit" id="findbutton" aria-label="Найти билеты" class="findbilet" onclick="location.href = 'reservation.html'";>
                 <span class="findtext">Найти билеты</span>
             </button>
         </a>
@@ -175,6 +216,8 @@
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/javascript.js') }}">
+    </script>
+    <script src="{{ url_for('static', filename='js/javascript2.js') }}">
     </script>
 </body>
 </html>

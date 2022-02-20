@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="Admin/css/util.css">
-    <link rel="stylesheet" type="text/css" href="Admin/css/main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/util.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='Admin/CSS/util.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='Admin/CSS/main.css') }}">
     <!--===============================================================================================-->
@@ -37,9 +37,9 @@
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button type="submit" name="register" value="register" class="login100-form-btn">
+                    <a href="/login.html" name="register" value="register" class="login100-form-btn">
                         Register
-                    </button>
+                    </a>
                 </div>
 
             </form>

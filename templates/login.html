@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='Admin/CSS/util.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='Admin/CSS/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/util.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css') }}">
     <!--===============================================================================================-->
 </head>
 <body>
@@ -48,14 +48,14 @@
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button onclick="lgnBtn()" class="login100-form-btn" >
+                    <a class="login100-form-btn" href="/panel.html">
                         Login
-                    </button>
+                    </a>
                 </div>
                 <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn" onclick="window.href = 'templates/register.html'">
+                    <a class="login100-form-btn" href="/register.html">
                         Register
-                    </button>
+                    </a>
                 </div>
 
             </form>
