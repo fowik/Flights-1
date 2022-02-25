@@ -157,9 +157,9 @@
         <option value="{{lidosta.content}}">{{ lidosta.content }}</option>
         {% endfor %}
         </select>
-        <input class="input1" type="text" placeholder="Modelis" name="modelis" id="modelis" maxlength="50" required="">
-        <input class="input1" type="text" placeholder="Ražošanas Gads" name="razosanas_gads" id="razosanas_gads" maxlength="4" required="">
-        <input class="input1" type="text" placeholder="Vietu skaits" name="vietu_skaits" id="vietu_skaits" maxlength="4" required="">
+        <input class="input1" type="text" placeholder="Modelis" name="modelis" id="modelis" maxlength="50" value="{{task.modelis}}" required>
+        <input class="input1" type="text" placeholder="Ražošanas Gads" name="razosanas_gads" id="razosanas_gads" maxlength="4" value="{{task.content}}" required>
+        <input class="input1" type="text" placeholder="Vietu skaits" name="vietu_skaits" id="vietu_skaits" maxlength="4" value="{{task.saisinajums}}" required>
         <span class="label"><input class="dobavit" type="submit" value="Добавить" id="pievienot"></span>
       </form>
             <!--== User Details ==-->

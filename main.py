@@ -34,22 +34,23 @@ class Lidmasina(db.Model):
     vietu_skaits = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
-def __repr__(self):
+    def __repr__(self):
         return 'Lidmasina %r' % self.id
 
-@app.route('/panel_samoleti.html', methods=['POST', 'GET'])
+@app.route('/templates/panel_samoleti', methods=['POST', 'GET'])
 def lidmasina():
     if request.method == 'POST':
       new_lidmasina = Lidmasina(content=request.form['content'],modelis=request.form['modelis'], razosanas_gads=request.form['razosanas_gads'], vietu_skaits=request.form['vietu_skaits'])
       try:
         db.session.add(new_lidmasina)
         db.session.commit()
-        return redirect('/panel_samoleti.html')
+        return redirect('/templates/panel_samoleti')
       except:
         return 0;
     else:
+      lidostas = Lidosta.query.order_by(Lidosta.id).all()
       tasks = Lidmasina.query.order_by(Lidmasina.date_created).all()
-      return render_template('panel_samoleti.html', tasks=tasks,)
+      return render_template('panel_samoleti.html', tasks=tasks, lidostas = lidostas)
 
 @app.route('/delete_airplane/<int:id>')
 def delete_plane(id):
@@ -152,5 +153,8 @@ def usa():
 @app.route('/panel_reisi.html')
 def panel_reisi():
     return render_template("panel_reisi.html")
+
+if __name__ == '__main__':
+    app.debug = True
 
 app.run(host='0.0.0.0', port=8080)
